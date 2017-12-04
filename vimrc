@@ -24,6 +24,7 @@ set noswapfile
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
+" QuickStart Toggle comments using <Leader>c<space> in Visual or Normal mode,
 "
 "=============================
 
@@ -94,7 +95,7 @@ let g:html_indent_style1 = "inc"
 
 "-----------------
 " Plugin settings
-"-----------------
+"----------------
 " Rainbow parentheses for Lisp and variants
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
@@ -178,7 +179,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "left"
+let NERDTreeWinPos = "right"
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -238,6 +239,7 @@ let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 
 " ctrlp
+" QuickStart Launch using <c-p>.
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
