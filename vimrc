@@ -21,8 +21,8 @@ set nobackup
 set noswapfile
 
 "highlight whitespaces for python programming
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " QuickStart Toggle comments using <Leader>c<space> in Visual or Normal mode,
 "
