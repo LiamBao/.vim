@@ -14,7 +14,7 @@ syntax on
 " change the mapleader from \ to ,
 let mapleader=","
 
-set gcr=a:block-blinkon0  " 禁止光标闪烁
+"set gcr=a:block-blinkon0  " 禁止光标闪烁
 
 " I dont like vim to ever write a backup file,just Git~
 set nobackup
@@ -34,7 +34,7 @@ set noswapfile
 "--------
 " color scheme
 set background=dark
-colorscheme solarized
+"colorscheme solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -43,7 +43,7 @@ set cursorline cursorcolumn
 
 " search/
 set incsearch
-set highlight 	" conflict with highlight current line
+"set highlight 	" conflict with highlight current line
 set ignorecase
 set smartcase
 
