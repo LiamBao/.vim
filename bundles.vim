@@ -1,7 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=/Users/liambao/Desktop/github/spacemacs_and_vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
@@ -94,9 +94,6 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'rickharris/vim-blackboard'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'rickharris/vim-monokai'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'fisadev/fisa-vim-colorscheme'
 
 filetype plugin indent on     " required!

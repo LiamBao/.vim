@@ -1,4 +1,4 @@
-source ~/.vim/bundles.vim
+source /Users/liambao/Desktop/github/spacemacs_and_vim/bundles.vim
 
 " encoding dectection
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
@@ -8,25 +8,6 @@ filetype plugin indent on
 
 " enable syntax hightlight and completion
 syntax on
-
-"========  by Liam  ==========
-
-" change the mapleader from \ to ,
-let mapleader=","
-
-set gcr=a:block-blinkon0  " 禁止光标闪烁
-
-" I dont like vim to ever write a backup file,just Git~
-set nobackup
-set noswapfile
-
-"highlight whitespaces for python programming
-"set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-" QuickStart Toggle comments using <Leader>c<space> in Visual or Normal mode,
-"
-"=============================
 
 
 "--------
@@ -50,7 +31,6 @@ set smartcase
 " editor settings
 set history=1000
 set nocompatible
-"set nofoldenable                                                  " disable folding"
 set confirm                                                       " prompt when existing from an unsaved file
 set backspace=indent,eol,start                                    " More powerful backspacing
 set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
@@ -74,17 +54,16 @@ set smartindent     " indent when
 set tabstop=4       " tab width
 set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
-" set textwidth=79
+" set textwidth=85
 " set smarttab
 set expandtab       " expand tab to space
 
-"autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-"autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=85
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+"autocmd FileType shell,bash tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
@@ -297,7 +276,7 @@ nnoremap ; :
 if has("gui_running")
     set go=aAce  " remove toolbar
     "set transparency=30
-    set guifont=Monaco:h14
+    set guifont=Monaco:h13
     set showtabline=2
     set columns=140
     set lines=40
@@ -314,3 +293,51 @@ if has("gui_running")
     map <D-9> 9gt
     map <D-0> :tablast<CR>
 endif
+
+
+
+"========  by Liam  ==========
+"fold code
+"set nofoldenable                                                  " disable folding"
+"set foldmethod=indent
+"set foldlevel=1
+"set foldclose=all
+"In-file Controls
+"zo - opens folds
+"zc - closes fold
+"zm - increases auto fold depth
+"zr - reduces auto fold depth
+"And if you ever get annoyed with the folds, use
+": set foldmethod=syntax
+"or press:
+"zR
+
+"在输入一个很长的行时，vim 总是会自动换行，并插入一个换行符
+"我们需要的是自动换行显示，但不要自动插入换行符
+autocmd FileType text setlocal textwidth=0
+set wrap
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
+"set wrap           "设置自动折行
+"set nowrap        "设置不自动折行
+
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+set gcr=a:block-blinkon0  " 禁止光标闪烁
+
+" I dont like vim to ever write a backup file,just Git~
+set nobackup
+set noswapfile
+
+"highlight whitespaces for python programming
+"set list
+"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" QuickStart Toggle comments using <Leader>c<space> in Visual or Normal mode,
+"
+"=============================
+
