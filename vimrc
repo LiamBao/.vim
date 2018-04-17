@@ -187,11 +187,16 @@ let g:user_emmet_expandabbr_key='<C-j>'
 "let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
-let g:neocomplcache_enable_at_startup=0
-let g:neoComplcache_disableautocomplete=1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_enable_camel_case_completion = 1
+" " 启用 neocomplcache.
+let g:neocomplcache_enable_at_startup=1
+
+let g:neoComplcache_disableautocomplete=0
+" 启用下划线补全
+let g:neocomplcache_enable_underbar_completion = 1
+"" 启用大写字母补全
+let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case=1
+" 设定最小语法关键词长
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
