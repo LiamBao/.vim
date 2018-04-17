@@ -323,9 +323,25 @@ set wrapmargin=0
 "set wrap           "设置自动折行
 "set nowrap        "设置不自动折行
 
+" 左右光标键切换 buffer
+noremap <silent> <Left> :bp<CR>
+noremap <silent> <Right> :bn<CR>
+
+
+"将分号和冒号互换
+nnoremap ; :
+nnoremap : ;
+
+
+"使用 \ 键打开当前编辑的文件
+nnoremap \ :!open <C-R>%<CR><CR>
 
 " change the mapleader from \ to ,
 let mapleader=","
+
+"粘贴时不置换“剪贴板”
+xnoremap p pgvy
+
 
 set gcr=a:block-blinkon0  " 禁止光标闪烁
 
