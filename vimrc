@@ -210,7 +210,7 @@ smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=python3complete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
@@ -218,8 +218,8 @@ endif
 let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
 
 " SuperTab
-" let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+let g:SuperTabDefultCompletionType='context'
+let g:SuperTabDefaultCompletionType = '<C-x><C-u>'
 let g:SuperTabRetainCompletionType=2
 
 " ctrlp
@@ -359,6 +359,32 @@ set noswapfile
 "set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " QuickStart Toggle comments using <Leader>c<space> in Visual or Normal mode,
-"
+
+
+
+"QUICK RUN
+map <F12> : call CompileRunGcc()<CR>
+func! CompileRunGcc()
+    exec "w"
+    if &filetype == 'c'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'cpp'
+        exec "!g++ % -o %<"
+        exec "!time ./%<"
+    elseif &filetype == 'sh'
+        :!time bash %
+    elseif &filetype == 'python'
+        exec "!time python3"
+    elseif &filetype == 'java'
+        exec "!javac %"
+        exec "!time java%<"
+    endif
+endfunc
+
+"字符超出80个的话就把那些字符的背景设为红色
+"highlight OverLength ctermbg=white  ctermfg=red guibg=#592929
+"match OverLength /\%90v.\+/
+
 "=============================
 
