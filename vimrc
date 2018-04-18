@@ -152,6 +152,10 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
 " 是否显示隐藏文件
 let NERDTreeShowHidden=1
+"无其他文件时关闭tree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+" 打开当前文件目录
+nn <silent><C-o> :exec("NERDTree ".expand('%:h'))<CR>
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
@@ -184,7 +188,7 @@ let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 
 let g:user_emmet_expandabbr_key='<C-j>'
 
 " powerline
-"let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
 " " 启用 neocomplcache.
@@ -302,6 +306,21 @@ endif
 
 
 "========  by Liam  ==========
+">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"         "YouCompleteMe config
+"install:
+"brew install cmake
+"cd ~/.vim/bundle/YouCompleteMe
+"sudo ./install.sh --clang-completer
+
+"specifying the Python binary interpreter to use
+let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/weibo/bin/python'
+"let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/machinelearning/python'
+
+"will be searched through the PATH
+"let g:ycm_python_binary_path = 'python'
+"<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 "fold code
 "set nofoldenable                                                  " disable folding"
 "set foldmethod=indent
@@ -360,7 +379,8 @@ set noswapfile
 
 " QuickStart Toggle comments using <Leader>c<space> in Visual or Normal mode,
 
-
+"ignore warning
+let g:go_version_warning = 0
 
 "QUICK RUN
 map <F12> : call CompileRunGcc()<CR>
@@ -385,6 +405,36 @@ endfunc
 "字符超出80个的话就把那些字符的背景设为红色
 "highlight OverLength ctermbg=white  ctermfg=red guibg=#592929
 "match OverLength /\%90v.\+/
-
 "=============================
+
+
+
+"   nerdtree 操作
+""    ?: 快速帮助文档
+""    o: 打开一个目录或者打开文件，创建的是buffer，也可以用来打开书签
+""    go: 打开一个文件，但是光标仍然留在NERDTree，创建的是buffer
+""    t: 打开一个文件，创建的是Tab，对书签同样生效
+""    T: 打开一个文件，但是光标仍然留在NERDTree，创建的是Tab，对书签同样生效
+""    i: 水平分割创建文件的窗口，创建的是buffer
+""    gi: 水平分割创建文件的窗口，但是光标仍然留在NERDTree
+""    s: 垂直分割创建文件的窗口，创建的是buffer
+""    gs: 和gi，go类似
+""    x: 收起当前打开的目录
+""    X: 收起所有打开的目录
+""    e: 以文件管理的方式打开选中的目录
+""    D: 删除书签
+""    P: 大写，跳转到当前根路径
+""    p: 小写，跳转到光标所在的上一级路径
+""    K: 跳转到第一个子路径
+""    J: 跳转到最后一个子路径
+""    <C-j>和<C-k>: 在同级目录和文件间移动，忽略子目录和子文件
+""    C: 将根路径设置为光标所在的目录
+""    u: 设置上级目录为根路径
+""    U: 设置上级目录为跟路径，但是维持原来目录打开的状态
+""    r: 刷新光标所在的目录
+""    R: 刷新当前根路径
+""    I: 显示或者不显示隐藏文件
+""    f: 打开和关闭文件过滤器
+""    q: 关闭NERDTree
+""    A: 全屏显示NERDTree，或者关闭全
 

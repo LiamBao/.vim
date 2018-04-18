@@ -11,6 +11,7 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
