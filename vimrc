@@ -360,12 +360,27 @@ nnoremap : ;
 "使用 \ 键打开当前编辑的文件
 nnoremap \ :!open <C-R>%<CR><CR>
 
+" 在上下移动光标时，光标的上方或下方至少会保留显示的行数
+set scrolloff=10
+
+" Keep search pattern at the center of the screen.
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+nnoremap <silent> g* g*zz
+
 " change the mapleader from \ to ,
 let mapleader=","
+let g:mapleader=","
 
 "粘贴时不置换“剪贴板”
 xnoremap p pgvy
 
+"交换#和*, #更近
+" switch # *
+nnoremap # *
+nnoremap * #
 
 set gcr=a:block-blinkon0  " 禁止光标闪烁
 
