@@ -107,7 +107,7 @@ hi Tb_VisibleNormal ctermbg=252 ctermfg=235
 hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 
 " easy-motion
-let g:EasyMotion_leader_key = '<Leader>'
+"let g:EasyMotion_leader_key = '<Leader>'
 
 " Tagbar
 let g:tagbar_left=1
@@ -306,6 +306,11 @@ endif
 
 
 "========  by Liam  ==========
+"<leader>cc 注释当前行
+" <leader>cm 只用一" " 组符号来注释
+" <leader>cy 注释并复制
+" <leader>cs 优美的注释
+" <leader>cu 取消注释
 ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "         "YouCompleteMe config
 "install:
@@ -313,9 +318,15 @@ endif
 "cd ~/.vim/bundle/YouCompleteMe
 "sudo ./install.sh --clang-completer
 
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 "specifying the Python binary interpreter to use
 let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/weibo/bin/python'
 "let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/machinelearning/python'
+
+"nnoremap <leader>gg :YouCompleter GoDeclaration<CR>
+nnoremap <leader>dd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <leader>gi :YouCompleter GoToInclude<CR>
 
 "will be searched through the PATH
 "let g:ycm_python_binary_path = 'python'
@@ -387,6 +398,10 @@ set gcr=a:block-blinkon0  " 禁止光标闪烁
 " I dont like vim to ever write a backup file,just Git~
 set nobackup
 set noswapfile
+
+
+set magic
+
 
 "highlight whitespaces for python programming
 "set list
