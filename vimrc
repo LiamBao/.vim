@@ -14,7 +14,7 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-set background=dark
+set background=solarized
 "colorscheme 
 
 " highlight current line
@@ -282,26 +282,28 @@ nnoremap ; :
 :command QA qa
 
 " for macvim
-if has("gui_running")
-    set go=aAce  " remove toolbar
-    "set transparency=30
-    set guifont=Monaco:h13
-    set showtabline=2
-    set columns=140
-    set lines=40
-    noremap <D-M-Left> :tabprevious<cr>
-    noremap <D-M-Right> :tabnext<cr>
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
-endif
+" if has("gui_running")
+    " set go=aAce  " remove toolbar
+    " "set transparency=30
+    " set background=dark
+    " colorscheme solarized
+    " set guifont=Monaco:14pt
+    " set showtabline=2
+    " set columns=140
+    " set lines=40
+    " noremap <D-M-Left> :tabprevious<cr>
+    " noremap <D-M-Right> :tabnext<cr>
+    " map <D-1> 1gt
+    " map <D-2> 2gt
+    " map <D-3> 3gt
+    " map <D-4> 4gt
+    " map <D-5> 5gt
+    " map <D-6> 6gt
+    " map <D-7> 7gt
+    " map <D-8> 8gt
+    " map <D-9> 9gt
+    " map <D-0> :tablast<CR>
+" endif
 
 
 
@@ -318,14 +320,14 @@ endif
 "cd ~/.vim/bundle/YouCompleteMe
 "sudo ./install.sh --clang-completer
 
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "specifying the Python binary interpreter to use
-let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/weibo/bin/python'
+"let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/weibo/bin/python'
 "let g:ycm_python_binary_path = '/Users/liambao/.virtualenvPython/machinelearning/python'
 
 "nnoremap <leader>gg :YouCompleter GoDeclaration<CR>
-nnoremap <leader>dd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap <leader>dd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "nnoremap <leader>gi :YouCompleter GoToInclude<CR>
 
 "will be searched through the PATH
