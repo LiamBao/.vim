@@ -14,8 +14,8 @@ syntax on
 " Vim UI
 "--------
 " color scheme
-set background=solarized
-"colorscheme 
+set background=dark
+colorscheme=solarized
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -29,6 +29,7 @@ set ignorecase
 set smartcase
 
 " editor settings
+set tex=Monaco:13pt
 set history=1000
 set nocompatible
 set confirm                                                       " prompt when existing from an unsaved file
